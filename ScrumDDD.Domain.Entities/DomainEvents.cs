@@ -4,22 +4,23 @@ using System.Text;
 
 namespace ScrumDDD.Domain.Entities
 {
-    public static class DomainEvents
+    public  class DomainEvents
     {
 
-        private static  readonly List<IDomainEvent> _list;
-        static DomainEvents()
+        private   readonly List<IDomainEvent> _list;
+        public  IEnumerable<IDomainEvent> Events => _list;
+        public DomainEvents()
         {
             _list = new List<IDomainEvent>();
         }
 
-        public static void AddDomainEvent<TEvent>(TEvent evt)
+        public  void AddDomainEvent<TEvent>(TEvent evt)
             where TEvent : IDomainEvent
         {
             _list.Add(evt);
         }
 
-        public static void Clear()
+        public  void Clear()
         {
             _list.Clear();
         }

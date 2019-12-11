@@ -12,9 +12,12 @@ namespace ScrumDDD.Domain.Entities
         public IEnumerable<Sprint> Sprints =>_sprints; 
         public Team Owner { get; set; }
 
+        public DomainEvents DomainEvents { get; }
+
         public Project()
         {
             this._sprints = new List<Sprint>();
+            DomainEvents = new DomainEvents();
         }
 
         public void AddSprint(Sprint sprint)
@@ -25,7 +28,7 @@ namespace ScrumDDD.Domain.Entities
             }
             _sprints.Add(sprint);
 
-            DomainEvents.AddDomainEvent(new SprintAddedToProject(this, sprint));
+            this.DomainEvents.AddDomainEvent(new SprintAddedToProject(this, sprint));
 
         }
 
