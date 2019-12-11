@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Scrum.BC.Api</name>
+    </assembly>
+    <members>
+        <member name="P:Scrum.BC.Api.Dtos.SprintDto.Days">
+            <summary>
+            MUST BE GREATHER THAN 0 AND LOWER THAN 30
+            </summary>
+        </member>
+    </members>
+</doc>
